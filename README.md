@@ -61,28 +61,8 @@ The RFID reader uses SPI bus 1 and the SD card uses a separate SPI bus 2, so the
    * Buzzer sounds for 3 seconds
    * Nothing is saved or sent
 7. Wait 1 second to avoid double-reads, then go back to scanning.
-See `flowchart.svg` (and the diagram below) for the full logic.
- 
-```mermaid
-flowchart TD
-    A([Start]) --> B[Connect to Wi-Fi]
-    B --> C[Sync time via NTP]
-    C --> D[Mount SD card, create CSV header if missing]
-    D --> E[Scan for RFID card]
-    E --> F{Card detected?}
-    F -- No --> E
-    F -- Yes --> G[Read UID]
-    G --> H{UID in student database?}
-    H -- Yes --> I[Generate datetime YYYY-MM-DD HH:MM:SS]
-    I --> J[Buzzer 0.3 s]
-    J --> K[Save row to SD card CSV]
-    K --> L[Send record to Firestore]
-    L --> N[Wait 1 s]
-    H -- No --> M[Print 'Unknown Card' and buzzer 3 s]
-    M --> N
-    N --> E
-```
- 
+See `flowchart.svg`  for the full logic.
+  
 ## Data format
  
 ### CSV (SD card)

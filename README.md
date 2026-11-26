@@ -61,7 +61,7 @@ The RFID reader uses SPI bus 1 and the SD card uses a separate SPI bus 2, so the
    * Buzzer sounds for 3 seconds
    * Nothing is saved or sent
 7. Wait 1 second to avoid double-reads, then go back to scanning.
-See `flowchart.svg`  for the full logic.
+See `lab5.drawio.svg`  for the full logic.
   
 ## Data format
  
@@ -166,8 +166,8 @@ Format the SD card as **FAT32** before using it.
 | File                  | Description                              |
 |-----------------------|------------------------------------------|
 | `main.py`             | ESP32 MicroPython code                   |
-| `flowchart.svg`       | System flowchart                         |
+| `lab5.drawio.svg`            | System flowchart                         |
 | `attendance.csv`      | Sample attendance log from the SD card   |
-| `firestore.png`       | Firestore screenshot                     |
+| `firestore.jpg`       | Firestore screenshot                     |
 | `demo.mp4`            | Demo video (60-90 sec)                   |
 | `README.md`           | This file                                |
